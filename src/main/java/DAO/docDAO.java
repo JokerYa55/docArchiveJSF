@@ -7,14 +7,11 @@ package DAO;
 
 import beans.Topic;
 import java.io.Serializable;
-import java.util.LinkedList;
 import java.util.List;
 import javax.enterprise.context.RequestScoped;
-import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.PersistenceUnit;
 import javax.persistence.TypedQuery;
 import org.jboss.logging.Logger;
 
@@ -23,7 +20,7 @@ import org.jboss.logging.Logger;
  * @author vasil
  */
 @Named
-@SessionScoped
+@RequestScoped
 public class docDAO implements Serializable {
 
     Logger log = Logger.getLogger(getClass().getName());
