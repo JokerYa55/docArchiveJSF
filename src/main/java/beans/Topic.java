@@ -26,7 +26,7 @@ public class Topic implements Serializable {
     @Column(name = "id", unique = true, nullable = false)
     Long id;
     @Column(name = "f_name", unique = true, nullable = false)
-    String name;
+    private String name;
 
     public Long getId() {
         return id;
@@ -34,6 +34,14 @@ public class Topic implements Serializable {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override

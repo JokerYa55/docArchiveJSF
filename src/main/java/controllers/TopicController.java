@@ -11,6 +11,8 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import org.jboss.logging.Logger;
 
@@ -54,6 +56,20 @@ public class TopicController {
 
     public void setTopicList(List<Topic> topicList) {
         this.topicList = topicList;
+    }
+
+    public void buttonAction(Long p_topic_id) {
+        log.info("buttonAction = " + p_topic_id);
+        addMessage("topic id = " + p_topic_id);
+    }
+
+    public void addMessage(String message) {
+        log.info("addMessage = " + message);
+        FacesContext context = FacesContext.getCurrentInstance();
+
+        context.addMessage(null, new FacesMessage("Successful", "Your message: " + message));
+        context.addMessage(null, new FacesMessage("Second Message", "Additional Message Detail"));
+
     }
 
 }

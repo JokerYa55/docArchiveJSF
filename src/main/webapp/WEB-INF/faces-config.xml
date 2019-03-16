@@ -14,12 +14,15 @@
             <supported-locale>ru_RU</supported-locale>
         </locale-config>        
     </application>
-    
     <navigation-rule>
         <from-view-id>/index.xhtml</from-view-id>
         <navigation-case>
-            <from-outcome>userlist</from-outcome>
-            <to-view-id>/admin/users.xhtml</to-view-id>
+            <from-outcome>test</from-outcome>
+            <to-view-id>/test.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>test1</from-outcome>
+            <to-view-id>/test1.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
 </faces-config>
